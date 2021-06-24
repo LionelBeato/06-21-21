@@ -14,10 +14,10 @@
 
     <h2>Here are some places I'd like to visit</h2>
 
-     <!-- This is how we render an unordered list -->
+    <!-- This is how we render an unordered list -->
     <ul>
       <li>
-          <!-- This is how we add images -->
+        <!-- This is how we add images -->
         <img
           src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg"
           width="50"
@@ -48,6 +48,68 @@
       </li>
     </ul>
 
+    <table>
+      <tr>
+        <th>Destination</th>
+        <th>Capital</th>
+        <th>Official Language</th>
+      </tr>
+      <tr>
+        <td>Spain</td>
+        <td>Madrid</td>
+        <td>Spanish</td>
+      </tr>
+      <tr>
+        <td>Italy</td>
+        <td>Rome</td>
+        <td>Italian</td>
+      </tr>
+      <tr>
+        <td>Aruba</td>
+        <td>Oranjestad</td>
+        <td>Dutch</td>
+      </tr>
+      <tr>
+        <td>Alaska</td>
+        <td>Juneau</td>
+        <td>n/a</td>
+      </tr>
+    </table>
+
+    <h2>Where do you want to visit?</h2>
+    <form>
+      <label for="name">Name: </label>
+      <input type="text" id="name" name="name" /><br />
+
+      <p>Select any that apply:</p>
+      <label for="spain">Spain</label>
+      <input type="checkbox" id="spain" name="spain" /><br />
+
+      <label for="france">France</label>
+      <input type="checkbox" id="france" name="france" /><br />
+
+      <label for="portugal">Portugal</label>
+      <input type="checkbox" id="portugal" name="portugal" /><br />
+
+      <label for="china">China</label>
+      <input type="checkbox" id="china" name="china" /><br />
+
+      <label for="type">What is your favorite type of travel locations?</label>
+      <select id="type" name="type">
+        <option value="beach">Beach</option>
+        <option value="mountains">Mountains</option>
+        <option value="city" selected>City</option>
+      </select>
+
+      <br /><br />
+
+      <textarea id="bio" name="bio" rows="7" cols="50">
+          Tell me a bit about yourself!
+      </textarea>
+      <br /><br />
+      <input type="submit" value="Ok Go!" />
+    </form>
+
     <!-- external hyperlink opens in a new window/tab -->
     <!-- <a href="https://www.google.com" target="_blank">google.com</a>
     <br>
@@ -59,7 +121,20 @@
         width="500"
       />
     </a> -->
-
-
+    <!-- 
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+      </tr>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+      </tr>
+      <tr>
+        <td>Jane</td>
+        <td>Doe</td>
+      </tr>
+    </table> -->
   </body>
 </html>
