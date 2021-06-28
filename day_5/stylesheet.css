@@ -1,0 +1,76 @@
+h1 {
+  color: blue;
+  font-size: 50px;
+}
+
+#red {
+  color: red;
+  text-align: center;
+}
+
+/* h3 {
+  color: green;
+} */
+
+/* Below is how you would write a comment
+in css, you need a forwardslash and asterisk */
+/* */
+
+#green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+  text-align: left;
+}
+
+.yellow {
+  color: yellow;
+}
+
+a:link {
+  color: green;
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: yellow;
+}
+
+.big-text {
+  font-weight: bold;
+  font-size: 48px;
+  color: green;
+  padding: 16px;
+  /* the last defined properties will resolve for the css
+  despite the fact that we have multiple font-sizes defined */
+  font-size: 72px;
+}
+
+/* target all <p> tags within a <div> make the text red */
+div p {
+  color: red;
+}
+
+/* target all div and p tags on the page and make 
+their text blue */
+/* div,
+p {
+  color: blue;
+} */
+
+.my-color {
+  color: #630f36;
+}
+
+body {
+  background-color: #c4ddc4;
+}
