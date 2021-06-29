@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@500&display=swap");
+
+
+/* makes the text green on small devices */
+@media only screen and (max-width: 767px) {
+  .my-text {
+    color: green;
+  }
+}
+
+/* makes the red on large devices */
+@media only screen and (min-width: 767px) {
+  .my-text {
+    color: red;
+  }
+}
+
+header {
+  position: fixed;
+  background: #fff;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 60px;
+  border-bottom: 4px solid green;
+}
+
+nav {
+  float: right;
+  padding: 5px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0; 
+}
+
+nav ul li {
+    display: inline-block;
+    float: left;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black; 
+}
+
+#menu-icon {
+    display: hidden;
+    width: 40px;
+    height: 40px;
+    background: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTk7z6qSJdV8wmm0xwR4nrK5OPwhOfXJPqzrIG3ynOlOoGHyc4PSyrvpQ) center;
+	background-size: contain;
+}
+
+
+@media only screen and (max-width: 768px) {
+    header {
+        position: absolute;
+        border-bottom: 4px solid red; 
+    }
+
+    a, a:active, a:visited {
+        color: white;
+    }
+
+    #menu-icon {
+        display:inline-block;
+    }
+
+    nav ul, nav:active ul {
+        display: none;
+        position: absolute;
+        background: #fff;
+        right: 0;
+        border: 5px solid #000;
+        width: 100%;
+    }
+
+    nav li:last-of-type {
+        border-bottom: 0px; 
+    }
+
+    nav ul li {
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 20px 0 20px 0;
+        background-color: red;
+        border-bottom: 1px solid #fff;
+    }
+
+    nav:hover ul {
+        display: block; 
+    }
+}
