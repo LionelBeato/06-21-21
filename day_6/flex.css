@@ -5,9 +5,19 @@
   background-color: dodgerblue;
 }
 
-.flex-container > div {
+.flex-container div {
   background-color: #ffffff;
   margin: 10px;
   padding: 20px;
   font-size: 30px;
+}
+
+/* recall that specific rules 
+will always trump general rules */
+.container > div > div {
+  background-color: aquamarine;
+}
+
+.container > div {
+  background-color: red;
 }
