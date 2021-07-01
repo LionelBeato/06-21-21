@@ -1,4 +1,6 @@
-// INTRO AND VARIABLES
+// ********* INTRO AND VARIABLES *********
+console.log("********* INTRO AND VARIABLES *********");
+
 
 // please note that JS will resolve from
 // top left to bottom right
@@ -38,7 +40,8 @@ console.log(MY_CONST)
 // you cannot reassign const variables
 // MY_CONST = 9;
 
-// TYPES
+// ********* TYPES *********
+console.log("********* TYPES *********");
 
 // below we have a string
 // this is a series of characters or numbers
@@ -84,6 +87,9 @@ console.log(parsedInt);
 let foo = null;
 
 console.log(`This is the value of foo: ${foo}`)
+
+// ********* CONDITONS AND LOOPS *********
+console.log("********* CONDITIONS AND LOOPS *********");
 
 
 let conditional = false;
@@ -186,4 +192,51 @@ switch (switchVariable) {
         break;
     default:
         console.log("No cases were matched!");
+}
+
+// ********* ARRAYS *********
+
+// an array is a collection of variables of the same type
+// a variable in an array is known as an element
+let gameConsoles = ['xbox', 'playstation 2']
+
+// arrays have many functions and properties that you can refer to
+// these add functionalities to the array
+
+// length is a prop that shows the "length" of an array
+// basicall how many elements are in the array
+console.log(gameConsoles.length)
+
+// push is a function that lets us add another element
+// to the array
+gameConsoles.push('gamecube');
+console.log(gameConsoles);
+
+// we can find a specific element either by its 
+// index or its literal value
+
+// this will pull the value at the *second* place
+// arrays are 0 indexed
+console.log(gameConsoles[1]);
+
+// using of will result in a loop that targets the element value
+for (let element of gameConsoles) {
+    console.log(element);
+}
+
+// using in will result in a loop that targets the "property" of any given element
+// for our example, it'll look like it renders the index
+for (let prop in gameConsoles) {
+    console.log(prop);
+    console.log(gameConsoles[prop]);
+}
+
+// CHALLENGE 1
+
+let numberOfCups = 4;
+
+if (numberOfCups < 3) {
+    console.log("Yes, I'll take another cup of coffee!")
+} else {
+    console.log("I think I'm okay for now.")
 }
