@@ -88,15 +88,15 @@ public class Main {
 //        LoopExample.enhancedFor(List.of(2,6,89,1387,4));
 //        WhileExample.whileLoop();
 //        WhileExample.doWhileLoop();
-////        WhileExample.doWhileInput();
+        WhileExample.doWhileInput();
 //        WhileExample.whileReader();
 //
 //        BranchingExample.breakFor();
 //        BranchingExample.breakForLabled();
 //        BranchingExample.continueFor();
-        BranchingExample.returnNothing(2);
-       int myInt =  BranchingExample.returnXorReturnZero(1);
-       System.out.println("here is the value returned from my method: " + myInt);
+//        BranchingExample.returnNothing(2);
+//       int myInt =  BranchingExample.returnXorReturnZero(1);
+//       System.out.println("here is the value returned from my method: " + myInt);
     }
 
 

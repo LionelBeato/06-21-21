@@ -31,12 +31,12 @@ public class WhileExample {
 
     public static void doWhileInput() {
         Scanner input = new Scanner(System.in);
-        char character;
+        char character = 'c';
 
         do {
             System.out.println("Enter another char command or q to quit: ");
             character = input.next().charAt(0);
-        } while (character != 'q' || character != 'Q');
+        } while (character != 'q' && character != 'Q');
 
         System.out.println("Quit command entered!");
 
