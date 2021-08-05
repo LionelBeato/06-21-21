@@ -1,4 +1,4 @@
-package com.tts;
+package com.tts.day_4;
 
 /*
 think of a class as a template
@@ -15,6 +15,16 @@ public class Person {
     private String name;
     private Integer age;
     private String location;
+    /*
+        In java, classes can have instances variables
+        that are of the same class
+
+        While the use of this pattern may not be immediately apparent,
+        there are indeed edge cases where one would need to have this
+        functionality
+
+        Can you think of any examples yourself?
+     */
     private Person person;
 
 
@@ -44,6 +54,33 @@ public class Person {
         this.person = person;
     }
 
+    public void sayHello() {
+        System.out.println("Hello, my name is " + name);
+    }
+
+    /*
+        note the String name in the parans
+        this is our parameter and it dictates the shape
+        of our arguments
+     */
+    public void sayHello(String name) {
+        System.out.println("Hello there, " + name);
+    }
+
+    public Integer ageNextYear() {
+        /*
+            var is a newer keyword in Java
+            which allows us to forgo mentioning a variables type
+            it is only legal within local scopes
+
+            var is not always recommended, but it's good when you
+            don't want to be concerned with the types being passed/defined
+            within a local scope
+         */
+        var modifiedAge = age + 1;
+        return modifiedAge;
+    }
+
     public Person(String name) {
         this.name = name;
     }
@@ -67,7 +104,7 @@ public class Person {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -96,6 +133,5 @@ public class Person {
                 ", age=" + age +
                 '}';
     }
-
 
 }
