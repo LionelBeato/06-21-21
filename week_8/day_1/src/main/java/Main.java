@@ -2,6 +2,7 @@ import aggregation.Address;
 import aggregation.Programmer;
 import composition.NetflixMovie;
 import composition.NetflixMovieLibrary;
+import homework.Book;
 import vehicle.*;
 // recall that you can import statically
 import static vehicle.VehicleClassification.USED;
@@ -54,6 +55,19 @@ public class Main {
 
         Department financeDepartment = DepartmentFactory.createDepartment(DepartmentEnum.FINANCE);
         System.out.println(financeDepartment);
+
+        List<Book> bookList = List.of(
+                new Book("book-1"),
+                new Book("book-2"),
+                new Book("book-3"),
+                new Book("book-4"),
+                new Book("book-5"),
+                new Book("book-6")
+        );
+
+//        System.out.println(bookList);
+        bookList.forEach(book -> System.out.println(book.getTitle()));
+
 
     }
 
