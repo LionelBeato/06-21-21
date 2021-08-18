@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+
+<div class="container bg-light justify-content-center">
+    <div class="row">
+        <div class="col col-md-6 offset-md-3">
+            <br/>
+            <h3>Forecast for <span th:text="${data.name}"></span></h3>
+            <p><b>Temperature:</b> <span th:text="${data.main.get('temp')}"></span> °F</p>
+            <p><b>Cloud Cover:</b> <span th:text="${data.clouds.get('all')}"></span> %</p>
+            <p><b>Wind:</b> <span th:text="${data.wind.get('speed')}"></span> mph</p>
+            <p><b>Conditions:</b> <span th:text="${data.weather[0].get('description')}"></span>
+
+                <img th:src="@{${'http://openweathermap.org/img/w/'
+                + data.weather[0].get('icon') + '.png'}}"></p>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
