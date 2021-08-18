@@ -7,23 +7,43 @@
 </head>
 <body>
 
+    <div class="container bg-light justify-content-center">
+        <div class="row">
 
-<div class="container bg-light justify-content-center">
-    <div class="row">
-        <div class="col col-md-6 offset-md-3">
-            <br/>
-            <h3>Forecast for <span th:text="${data.name}"></span></h3>
-            <p><b>Temperature:</b> <span th:text="${data.main.get('temp')}"></span> °F</p>
-            <p><b>Cloud Cover:</b> <span th:text="${data.clouds.get('all')}"></span> %</p>
-            <p><b>Wind:</b> <span th:text="${data.wind.get('speed')}"></span> mph</p>
-            <p><b>Conditions:</b> <span th:text="${data.weather[0].get('description')}"></span>
+            <div class="col-md-6 offset-md-3">
+                <br/>
+                <h1 class="text-center">Get Your Local Forecast</h1>
+                <form th:action="@{/}" th:object="${request}" method="post" autocomplete="off">
+                    <div class="form-group">
+                        <input type="text" th:field="*{zipCode}" placeholder="Zip Code" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-md btn-primary btn-block" name="Submit" value="Submit" type="Submit">
+                            Check Weather
+                        </button>
+                    </div>
+                </form>
+                <hr>
+                <span th:if="${data != null && data.name == 'error'}">
+                    Invalid zip code. Weather data not found.
+                </span>
+            </div>
 
-                <img th:src="@{${'http://openweathermap.org/img/w/'
+            <div class="col col-md-6 offset-md-3">
+                <br/>
+                <div th:if="${data != null && data.name != 'error'}">
+                <h3>Forecast for <span th:text="${data.name}"></span></h3>
+                <p><b>Temperature:</b> <span th:text="${data.main.get('temp')}"></span> °F</p>
+                <p><b>Cloud Cover:</b> <span th:text="${data.clouds.get('all')}"></span> %</p>
+                <p><b>Wind:</b> <span th:text="${data.wind.get('speed')}"></span> mph</p>
+                <p><b>Conditions:</b> <span th:text="${data.weather[0].get('description')}"></span>
+
+                    <img th:src="@{${'http://openweathermap.org/img/w/'
                 + data.weather[0].get('icon') + '.png'}}"></p>
+            </div>
         </div>
     </div>
 </div>
-
 
 
 </body>
