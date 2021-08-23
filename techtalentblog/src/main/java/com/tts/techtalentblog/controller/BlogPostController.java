@@ -5,10 +5,7 @@ import com.tts.techtalentblog.repository.BlogPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,12 +40,27 @@ public class BlogPostController {
         return "blogpost/new";
     }
 
-//    TODO(): Edit blogpost method
+    @GetMapping("/blogposts/{id}")
+    public String editPostById(@PathVariable Long id, BlogPost blogPost, Model model) {
+        model.addAttribute("blogPost", blogPostRepository.findById(id).orElseThrow());
+        return "blogpost/edit";
+    }
 
-    @DeleteMapping("/blogposts/{id}")
+    @PostMapping("/blogposts/update/{id}")
+    public String updateExistingPost(@PathVariable Long id, BlogPost blogPost, Model model) {
+        var actualPost = blogPostRepository.findById(id).orElseThrow();
+        actualPost.setAuthor(blogPost.getAuthor());
+        actualPost.setTitle(blogPost.getTitle());
+        actualPost.setBlogEntry(blogPost.getBlogEntry());
+        blogPostRepository.save(actualPost);
+        model.addAttribute("blogPost", actualPost);
+        return "blogpost/result";
+    }
+
+    @RequestMapping("/blogposts/delete/{id}")
     public String deletePostById(@PathVariable Long id, BlogPost blogPost) {
         blogPostRepository.deleteById(id);
-        return "blogpost/index";
+        return "blogpost/delete";
     }
 
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>delete</title>
+    <!--    <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
+    <div th:replace="fragments/style"></div>
+</head>
+<body>
+<div th:replace="fragments/navbar"></div>
+<div class="container">
+
+    <h3>This post has been deleted!</h3>
+
+
+    <a th:href="@{/}"><button class="btn btn-success">Back To Home Page</button></a>
+    <a th:href="@{/blogposts/new}"><button class="btn btn-primary">Submit a New Blog Post</button></a>
+
+</div>
+<div th:replace="fragments/body"></div>
+<!--<script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!--<script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>-->
+</body>
+</html>

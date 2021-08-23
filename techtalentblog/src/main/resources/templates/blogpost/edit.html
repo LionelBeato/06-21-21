@@ -2,7 +2,7 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>New</title>
+    <title>Edit</title>
 <!--    <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">-->
     <div th:replace="fragments/style"></div>
 </head>
@@ -11,7 +11,7 @@
 
 <div class="container">
 <p>Please use the form below to submit a Blog Post: </p>
-<form action="#" th:action="@{/blogposts}" th:object="${blogPost}" method="post">
+<form action="#" th:action="@{~/blogposts/update/{id}(id=${blogPost.id})}" th:object="${blogPost}" method="post">
 
     <div class="form-group">
         <input type="text" class="form-control" placeholder="Blog Title..." th:field="*{title}">
