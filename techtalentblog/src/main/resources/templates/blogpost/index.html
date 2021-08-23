@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/standard.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -31,6 +32,18 @@
 <!--                        Link to Update -->
 <!--                        Link to Show -->
 <!--                        Link to Destroy -->
+                        <form action="#"
+                              th:action="@{'/blogposts/{id}'(id=${blog.id})}"
+                              th:method="delete"
+                              class="form-horizontal">
+
+                                <div class="form-group">
+                                    <input type="hidden" name="_method" value="delete" />
+                                    <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
+                                </div>
+
+                        </form>
+
                     </div>
                 </div>
             </div>

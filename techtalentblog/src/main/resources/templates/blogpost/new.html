@@ -6,29 +6,44 @@
     <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+<div class="container">
 <p>Please use the form below to submit a Blog Post: </p>
 <form action="#" th:action="@{/blogposts}" th:object="${blogPost}" method="post">
-    <table>
-        <tr>
-            <td>Title</td>
-            <td><input type="text" th:field="*{title}" /></td>
-        </tr>
-        <tr>
-            <td>Author:</td>
-            <td><input type="text" th:field="*{author}" /></td>
-        </tr>
-        <tr>
-            <td>Blog Entry:</td>
-            <td><input type="text" th:field="*{blogEntry}" /></td>
-        </tr>
-        <tr>
-            <td><button type="submit">Submit Your Post</button></td>
-        </tr>
 
-    </table>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Blog Title..." th:field="*{title}">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Your Name Here.." th:field="*{author}">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Blog Entry" th:field="*{blogEntry}">
+    </div>
+
+    <button class="btn btn-primary">Submit Your Post</button>
+
+
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td>Title</td>-->
+<!--            <td><input type="text" th:field="*{title}" /></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Author:</td>-->
+<!--            <td><input type="text" th:field="*{author}" /></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Blog Entry:</td>-->
+<!--            <td><input type="text" th:field="*{blogEntry}" /></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><button type="submit">Submit Your Post</button></td>-->
+<!--        </tr>-->
+
+<!--    </table>-->
 
 </form>
+</div>
 
 <script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
