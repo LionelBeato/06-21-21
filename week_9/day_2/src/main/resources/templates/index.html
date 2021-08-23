@@ -26,5 +26,11 @@
     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
 -->
 
+<ul th:each="customer: ${customers}">
+    <li th:text="${customer.firstName}"></li>
+    <li th:text="${customer.lastName}"></li>
+    <li th:text="${customer.id}"></li>
+</ul>
+
 </body>
 </html>

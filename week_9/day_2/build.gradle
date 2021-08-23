@@ -13,10 +13,11 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	runtimeOnly 'com.h2database:h2'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.3'
+	runtimeOnly 'com.h2database:h2:1.4.200'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.3'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
 test {
