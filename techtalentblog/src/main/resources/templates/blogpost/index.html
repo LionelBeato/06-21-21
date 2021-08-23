@@ -3,34 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/standard.css" rel="stylesheet">
 </head>
 <body>
+<div class="container">
+
 
 <h1>Welcome to our Blog Post Site!</h1>
 <h3>Check out our blogs!</h3>
 
-<p>Please use the form below to submit a Blog Post: </p>
-<form action="#" th:action="@{/}" th:object="${blogPost}" method="post">
-    <table>
-        <tr>
-            <td>Title</td>
-            <td><input type="text" th:field="*{title}" /></td>
-        </tr>
-        <tr>
-            <td>Author:</td>
-            <td><input type="text" th:field="*{author}" /></td>
-        </tr>
-        <tr>
-            <td>Blog Entry:</td>
-            <td><input type="text" th:field="*{blogEntry}" /></td>
-        </tr>
-        <tr>
-            <td><button type="submit">Submit Your Post</button></td>
-        </tr>
 
-    </table>
 
-</form>
+    <div class="row">
+        <div th:each="blog : ${posts}">
+            <div class="col-md-6">
+                <div class="panel panel-default">
 
+                    <div class="panel-heading">
+                        <p th:text="${blog.title}"/>
+                    </div>
+
+                    <div class="panel-body">
+                        <p th:text="${blog.author}"/>
+                        <p th:text="${blog.blogEntry}"/>
+                    </div>
+                    <div class="panel-footer">
+<!--                        Link to Update -->
+<!--                        Link to Show -->
+<!--                        Link to Destroy -->
+                        <form action="#"
+                              th:action="@{'/blogposts/{id}'(id=${blog.id})}"
+                              th:method="delete"
+                              class="form-horizontal">
+
+                                <div class="form-group">
+                                    <input type="hidden" name="_method" value="delete" />
+                                    <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
+                                </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a th:href="@{/blogposts/new}">
+        <button class="btn btn-primary">Submit a New Blog Post</button>
+    </a>
+
+</div>
+
+<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 </body>
 </html>
